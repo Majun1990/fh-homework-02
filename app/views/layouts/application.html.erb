@@ -10,6 +10,27 @@
   </head>
 
   <body>
+      
+<h1>Who Wants To Read?</h1>
+    <h2><%= @book.each do |book| %></h2>
+      <div>
+        <%= book.title%>
+        <%= book.author %>
+        <%= book.genre %>
+        <%= book.classification %>
+        <%= book.type %>
+        <%= book.year %>
+        <%= link_to 'Show', book_path %>
+        <%= link_to 'Edit', edit_booth_path %>
+        <%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' %>
+      </div>
+    <% end %>
+
+    <%= form_tag("/search", method: "get") do %>
+      <%= label_tag(:q, "Search for:") %>
+      <%= text_field_tag(:q) %>
+      <%= submit_tag("Search") %>
+    <% end %>
     <%= yield %>
   </body>
 </html>
