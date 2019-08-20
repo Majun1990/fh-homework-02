@@ -1,14 +1,17 @@
-<h1><%= @book.title%></h1>
+<div class="booyah-box col-10 offset-1">
+<label><strong>Title: </strong><%= @book.title%></label>
+<br/>
+<label><strong>Author: </strong><%= @book.author %></label>
+<br/>
+<label><strong>Genre: </strong><%= @book.genre %></label>
+<br/>
+<label><strong>Classification: </strong><%= @book.classification %></label>
+<br/>
+<label><strong>Book Type: </strong><%= @book.book_type %></label>
+<br/>
+<label><strong>Year: </strong><%= @book.year %></label>
+<br/><br/>
+<button type="button" class="btn btn-outline-primary"><%= link_to 'Edit', edit_book_path(@book) %></button>
+<button type="button" class="btn btn-outline-danger"><%= link_to 'Destroy', book_path(@book), method: :delete %></button>
 
-<h2>    <%= @book.author %>
-        <br/>
-        <%= @book.genre %>
-        <br/>
-        <%= @book.classification %>
-        <br/>
-        <%= @book.book_type %>
-        <br/>
-        <%= @book.year %>    </h2>
-        <br/>
-        <%= link_to 'Edit', edit_book_path(@book) %>
-        <%= link_to 'Destroy', book_path(@book), method: :delete %>
+</div>
