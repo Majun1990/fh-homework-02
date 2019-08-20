@@ -23,7 +23,6 @@ default: &default
   username: postgres
   password: password
   host: localhost
-
 development:
   <<: *default
   database: fh-homework-02_development

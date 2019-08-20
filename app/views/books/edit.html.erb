@@ -1,0 +1,23 @@
+<h1>Edit a Book</h1>
+<%= form_for @book do |f| %>
+    <%= f.label :title %>:
+    <%= f.text_field :title %><br />
+
+    <%= f.label :author %>:
+    <%= f.text_field :author %><br />
+
+    <%= f.label :genre %>:
+    <%= f.text_field :genre %><br />
+
+    <%= f.label :classification %>:
+    <%= f.text_field :classification %><br />
+
+    <%= f.label :book_type %>:
+    <%= f.text_field :book_type %><br />
+
+    <%= f.label :year %>:
+    <%= f.text_field :year %><br />
+
+    <%= f.submit "Update"%>
+    <%= link_to "Back", books_path(@book) %>
+<% end %>
