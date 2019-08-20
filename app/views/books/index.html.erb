@@ -1,4 +1,11 @@
-<h1>Who Wants To Read?</h1>
+<h1>Books</h1>
+
+    <%= form_tag("/search", method: "get") do %>
+      <%= label_tag(:q, "Search for:") %>
+      <%= text_field_tag(:q) %>
+      <%= submit_tag("Search") %>
+    <% end %>
+
     <h2><%= @books.each do |book| %></h2>
       <div>
         <%= book.title%>
@@ -7,14 +14,9 @@
         <%= book.classification %>
         <%= book.book_type %>
         <%= book.year %>
-        <%= link_to 'Show', "#" %>
-        <%= link_to 'Edit', "#" %>
-        <%= link_to 'Destroy', method: :delete %>
+        <%= link_to 'Show',book_path(book) %>
+        <%= link_to 'Edit', edit_book_path(book) %>
+        <%= link_to 'Destroy', book_path(book), method: :delete %>
+        <% end %>
       </div>
-    <% end %>
-
-<%= form_tag("/search", method: "get") do %>
-  <%= label_tag(:q, "Search for:") %>
-  <%= text_field_tag(:q) %>
-  <%= submit_tag("Search") %>
-<% end %>
+    

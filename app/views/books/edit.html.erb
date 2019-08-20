@@ -1,0 +1,10 @@
+<h1>Edit a Book</h1>
+<h2><%= form_for @book do |f| %>
+        <%= f.input :title%>
+        <%= f.input :author %>
+        <%= f.input :genre %>
+        <%= f.input :classification %>
+        <%= f.input :book_type %>
+        <%= f.input :year %>
+        <%= f.submit "Update"%></h2>
+<% end %>
