@@ -1,6 +1,10 @@
 class BooksController < ApplicationController
     def index
-        @books = Book.all
+        if
+        @books = Book.search(params[:search], params[:id])
+        else
+           @books = Book.all 
+        end
     end
     
     def new
@@ -18,8 +22,8 @@ class BooksController < ApplicationController
 
     def update
         @book = Book.find(params[:id])
-        @book.update_attributes(:title, :author, :book_type, :genre, :classification, :year)
-        redirect_to books_path
+        @book.update_attributes(book_params)
+        redirect_to book_path
     end
 
     def destroy
@@ -27,4 +31,11 @@ class BooksController < ApplicationController
         @book.destroy
         redirect_to books_path
     end
+
+    private
+
+    def book_params
+        params.require(:book).permit(:title, :author, :genre, :classification, :book_type, :year)
+    end
+
 end

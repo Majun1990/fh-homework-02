@@ -1,10 +1,22 @@
 <h1>Enter a New Book</h1>
 <%= form_for @book, new_book_path, do |f|%>
-        <%= f.input :title%>
-        <%= f.input :author %>
-        <%= f.input :genre %>
-        <%= f.input :classification %>
-        <%= f.input :book_type %>
-        <%= f.input :year %>
-        <%= f.submit "Create"%>
+    <%= f.label :title %>:
+    <%= f.text_field :title %><br />
+
+    <%= f.label :author %>:
+    <%= f.text_field :author %><br />
+
+    <%= f.label :genre %>:
+    <%= f.text_field :genre %><br />
+
+    <%= f.label :classification %>:
+    <%= f.text_field :classification %><br />
+
+    <%= f.label :book_type %>:
+    <%= f.text_field :book_type %><br />
+
+    <%= f.label :year %>:
+    <%= f.text_field :year %><br />
+
+    <%= f.submit "Create"%>
 <% end %>

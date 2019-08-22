@@ -1,8 +1,8 @@
 <h1>Books</h1>
 
-    <%= form_tag("/search", method: "get") do %>
-      <%= label_tag(:q, "Search for:") %>
-      <%= text_field_tag(:q) %>
+    <%= form_tag(books_path, role: "search", method: :get) do %>
+      <%= label_tag(:search, "Search for:") %>
+      <%= text_field_tag :search, params[:search] %>
       <%= submit_tag("Search") %>
     <% end %>
   <table class="table">
